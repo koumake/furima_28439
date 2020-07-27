@@ -36,6 +36,8 @@ Things you may want to cover:
 - has_many :exhibitions
 - has_many :purchases
 - has_many :comments
+- belongs_to :addresses
+
 
 ## exhibitionsテーブル
 |Column|Type|Options|
@@ -52,10 +54,11 @@ Things you may want to cover:
 ### Association
 - belongs_to :users
 - belongs_to :purchases
+- belongs_to :addresses
 - has_many :comments
 
 
-## purchasesテーブル
+## addressesテーブル
 |Column|Type|Options|
 |:---:|:---:|:---:|
 |postal-code|integer|null: false| 
@@ -66,6 +69,20 @@ Things you may want to cover:
 |tel-number|integer|null: false|
 ### Association
 - belongs_to :users
+- belongs_to :exhibitions
+- has_many :comments
+- has_many :purchases
+
+
+
+## purchasesテーブル
+|Column|Type|Options|
+|:---:|:---:|:---:|
+|user_id|references|null: false, foreign_key: true|
+|item_id|references|null: false, foreign_key: true|
+### Association
+- belongs_to :users
+- belongs_to :addresses
 - has_many :exhibitions
 - has_many :comments
 
@@ -80,4 +97,4 @@ Things you may want to cover:
 - belongs_to :users
 - belongs_to :exhibitions
 - belongs_to :purchases
-
+- belongs_to :addresses
