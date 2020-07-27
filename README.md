@@ -23,43 +23,41 @@ Things you may want to cover:
 
 * ...
 
-## groups_usersテーブル
+## usersテーブル
 |Column|Type|Options|
 |:---:|:---:|:---:|
 |name|string|null: false|
-|name-kana|string|null: false|
+|firstname-kana|string|null: false|
+|lastname-kana|string|null: false|
 |email|string|null: false|
-|birthday|integer|null: false|
+|birthday|date|null: false|
 |nickname|string|null: false|
 ### Association
 - has_many :exhibitions
 - has_many :purchases
 - has_many :comments
 
-## groups_exhibitionsテーブル
+## exhibitionsテーブル
 |Column|Type|Options|
 |:---:|:---:|:---:|
 |item|string|null: false|
-|item-image|string|null: false|
+|image|string|null: false|
 |price|integer|null: false|
 |category|string|null: false|
 |condition|string|null: false|
 |delivery-fee|string|null: false|
 |from|string|null: false|
 |days|string|null: false| 
-|item-about|text|null: false|
+|about|text|null: false|
 ### Association
 - belongs_to :users
 - belongs_to :purchases
 - has_many :comments
 
 
-## groups_purchasesテーブル
+## purchasesテーブル
 |Column|Type|Options|
 |:---:|:---:|:---:|
-|card-number|integer|null: false|
-|deadline|integer|null: false|
-|security-code|integer|null: false|
 |postal-code|integer|null: false| 
 |prefecture|string|null: false|
 |city|string|null: false|
@@ -72,11 +70,10 @@ Things you may want to cover:
 - has_many :comments
 
 
-## groups_commentsテーブル
+## commentsテーブル
 |Column|Type|Options|
 |:---:|:---:|:---:|
 |content|text|null: false|
-|created-at|datetime|null: false|
 |item_id|references|null: false, foreign_key: true|
 |user_id|references|null: false, foreign_key: true| 
 ## Association
