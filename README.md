@@ -78,8 +78,8 @@ Things you may want to cover:
 ## purchasesテーブル
 |Column|Type|Options|
 |:---:|:---:|:---:|
-|user_id|references|null: false, foreign_key: true|
-|item_id|references|null: false, foreign_key: true|
+|user|references|null: false, foreign_key: true|
+|item|references|null: false, foreign_key: true|
 ### Association
 - belongs_to :users
 - belongs_to :addresses
@@ -91,8 +91,8 @@ Things you may want to cover:
 |Column|Type|Options|
 |:---:|:---:|:---:|
 |content|text|null: false|
-|item_id|references|null: false, foreign_key: true|
-|user_id|references|null: false, foreign_key: true| 
+|item|references|null: false, foreign_key: true|
+|user|references|null: false, foreign_key: true| 
 ## Association
 - belongs_to :users
 - belongs_to :exhibitions
