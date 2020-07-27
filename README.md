@@ -79,7 +79,7 @@ Things you may want to cover:
 |created-at|datetime|null: false|
 |item_id|references|null: false, foreign_key: true|
 |user_id|references|null: false, foreign_key: true| 
-### Association
+## Association
 - belongs_to :users
 - belongs_to :exhibitions
 - belongs_to :purchases
